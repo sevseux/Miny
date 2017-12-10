@@ -1,0 +1,37 @@
+{
+  "name": "miny",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Miny - Mini chat based on express and socket.io",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "socket.io": "^2.0.4",
+    "sqlstring": "^2.3.0",
+    "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --recursive tests",
+    "blabla": "node tmp.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sevseux/MinyJS.git"
+  },
+  "author": "Séverin SEUX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sevseux/MinyJS/issues"
+  },
+  "homepage": "https://github.com/sevseux/MinyJS#readme"
+}

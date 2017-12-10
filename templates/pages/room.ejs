@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<$ include ../partials/head.ejs $>
+</head>
+<body>
+	<main>
+		<div class="container">
+			<ul class="list-inline" id="messages">
+				<li class="list-group-item col-12" id="first_message"><$= motd $></li>
+			</ul>
+			<form action="/room">
+				<div class="input-group">
+					<input id="inputText" type="text" class="form-control" placeholder="Type chat message..." autocomplete="off" autofocus>
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button" id="sendButton">Send</button>
+					</span>
+				</div>
+			</form>
+		</div>
+	</main>
+	<footer>
+		<$ include ../partials/footer.ejs $>
+	</footer>
+</body>
+</html>

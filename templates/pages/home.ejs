@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<$ include ../partials/head.ejs $>
+</head>
+<body>
+	<main class="container">
+		<div class="jumbotron">
+			<h1>Readme of Miny Project</h1>
+			<p>This project has been made by Emna Bouzouita & Séverin Seux.</p>
+			<h2>Getting Started</h2>
+			<ul>
+				<li>This project is a minimalist web chat using WebSocket.</li>
+				<li>Every new user obtain from the server a random and unique username just after connection.</li>
+				<li>The server send to the new user the history of the chat (from the database).</li>
+				<li>You can access to <a href="/room"> the main page here</a>.</li>
+			</ul>
+			<h2>Technical Abstract</h2>
+			<ul>
+				<li>Build in node.js</li>
+				<li>Express as web framework</li>
+				<li>Socket.IO as WebSocket framework</li>
+				<li>MySQL for database</li>
+			</ul>
+			<h2>Bring the web application into production</h2>
+			<ol>
+				<li>Buy a domain name (with Gandi, a good french company).</li>
+				<li>Have a raspberry accessible from internet.</li>
+				<li>Set a <code>cron</code> job to update the DNS to link the domain name and the personal dynamic IP (the script basically use the beautiful Gandi API).</li>
+				<li>Set up an apache server and virtual hosts to redirect internally to the right website.</li>
+				<li>Set up an mySQL database.</li>
+				<li>Retrieve the master branch from the git repository.</li>
+				<li>Start the server.</li>
+				<li>Enjoy !</li>
+			</ol>
+			<h2>Tests</h2>
+			<ul>
+				<li>Mocha as JS test framework</li>
+				<li>Chai as assertion library</li>
+				<li>For you convenience, we export results of to classical situations :
+					<ul>
+						<li>a failure test log <a href="/files/test_failure.log">here</a> (database not launched).</li>
+						<li>a success test log <a href="/files/test_success.log">here</a>.</li>
+					</ul>
+				</li>
+				<li>If you installed a local instance of this project you can run test using : 
+				</li>
+				<code>$ npm test</code>
+			</ul>
+			<h2>Some design patterns</h2>
+			<ul>
+				<li>We design our solution using a MVC architecture : 
+					<ul>
+						<li>The app contains routes which call the associates controllers</li>
+						<li>The controller manages either the view and the model.</li>
+						<li>The view render from templates using EJS engine</li>
+						<li>The model access to the database to retrieve or add informations about messages.</li>
+					</ul>
+				</li>
+				<li>As soon as we work with express, we use the concept of middleware :
+					<ul>
+						<li>The <code>express.static</code> middleware is used to specify the <code>/public</code> folder for js files, css files...</li>
+						<li>The <code>sendDatabaseToRoute</code> is a small middleware to inject the database connection to the called controller.</li>
+					</ul>
+				</li>
+				<li>Singletons : as soon as we use the <code>require</code> function, we block the number of allowed instances at 1.</li>
+				<li>Dependency Injection : when we use inheritances, for each models, controllers and views, we use this design pattern to specify the child class.</li>
+				<li>Prototype : we used this one with the model, as we specified elements in prototype and call the model with the <code>new</code> operator.</li>
+			</ul>
+			<h2>Going further...</h2>
+			<ul>
+				<li>We may implement more design patterns as saw in <a href="https://sourcemaking.com/design_patterns">this perfect website</a>.</li>
+				<li>As discussed in course, we can improve the deployement process :
+					<ol>
+						<li>Commit every new functionality.</li>
+						<li>Executes the test suite as soon as a commit is made (to avoid any regression, and forbid the push if something goes wrong).</li>
+						<li>Schedules a <code>cron</code> job in production server in order to check any update in master branch of the git repository.</li>
+						<li>If is there are updates, launches an temporary instance of the web application, which will redirect any connection during the process of the update.</li>
+						<li>Update the project from the master branch.</li>
+						<li>Launches again the main instance.</li>
+					</ol>
+				</li>
+				<li>Migrates the application into a docker container.</li>
+				<li>Add any good, useful and funny functionality for the chat service !</li>
+			</ul>
+		</div>
+	</main>
+</body>
+</html>

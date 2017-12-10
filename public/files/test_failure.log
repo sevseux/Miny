@@ -1,0 +1,100 @@
+
+> miny@1.0.0 test S:\cours\Miny
+> mocha --recursive tests
+
+
+
+  Base controller
+    √ should have a method which returns a child instance
+    √ should be capable to create differents childs
+
+  HomeController
+    √ should have the name of home
+    √ should have a run method
+
+  RoomController
+    √ should have the name of room
+    √ should have a run method
+    √ should have a model property
+    1) should be able to take the first id from database
+
+  BaseModel
+    √ should be able to create a model
+    √ should have a method which returns a child instance
+
+  ChatModel
+    √ should be able to create an instance of the ChatModel 
+    2) should access to the database
+    3) should select the first row of data from database
+
+  BaseView
+    √ should be able to create a view
+    √ should have a method which returns a child instance
+
+
+  12 passing (137ms)
+  3 failing
+
+  1) RoomController
+       should be able to take the first id from database:
+     Error: ER_BAD_DB_ERROR: Base 'miny' inconnue
+      at Handshake.Sequence._packetToError (node_modules\mysql\lib\protocol\sequences\Sequence.js:52:14)
+      at Handshake.ErrorPacket (node_modules\mysql\lib\protocol\sequences\Handshake.js:130:18)
+      at Protocol._parsePacket (node_modules\mysql\lib\protocol\Protocol.js:279:23)
+      at Parser.write (node_modules\mysql\lib\protocol\Parser.js:76:12)
+      at Protocol.write (node_modules\mysql\lib\protocol\Protocol.js:39:16)
+      at Socket.<anonymous> (node_modules\mysql\lib\Connection.js:103:28)
+      at addChunk (_stream_readable.js:263:12)
+      at readableAddChunk (_stream_readable.js:250:11)
+      at Socket.Readable.push (_stream_readable.js:208:10)
+      at TCP.onread (net.js:594:20)
+      --------------------
+      at Protocol._enqueue (node_modules\mysql\lib\protocol\Protocol.js:145:48)
+      at Protocol.handshake (node_modules\mysql\lib\protocol\Protocol.js:52:23)
+      at Connection.connect (node_modules\mysql\lib\Connection.js:130:18)
+      at Connection._implyConnect (node_modules\mysql\lib\Connection.js:461:10)
+      at Connection.query (node_modules\mysql\lib\Connection.js:206:8)
+      at module.exports.selectAll (models\Chat.js:11:17)
+      at Object.getMessages (controllers\Room.js:25:24)
+      at Context.<anonymous> (tests\controllers\Room.test.js:29:18)
+
+  2) ChatModel
+       should access to the database:
+     Error: ER_BAD_DB_ERROR: Base 'miny' inconnue
+      at Handshake.Sequence._packetToError (node_modules\mysql\lib\protocol\sequences\Sequence.js:52:14)
+      at Handshake.ErrorPacket (node_modules\mysql\lib\protocol\sequences\Handshake.js:130:18)
+      at Protocol._parsePacket (node_modules\mysql\lib\protocol\Protocol.js:279:23)
+      at Parser.write (node_modules\mysql\lib\protocol\Parser.js:76:12)
+      at Protocol.write (node_modules\mysql\lib\protocol\Protocol.js:39:16)
+      at Socket.<anonymous> (node_modules\mysql\lib\Connection.js:103:28)
+      at addChunk (_stream_readable.js:263:12)
+      at readableAddChunk (_stream_readable.js:250:11)
+      at Socket.Readable.push (_stream_readable.js:208:10)
+      at TCP.onread (net.js:594:20)
+      --------------------
+      at Protocol._enqueue (node_modules\mysql\lib\protocol\Protocol.js:145:48)
+      at Protocol.handshake (node_modules\mysql\lib\protocol\Protocol.js:52:23)
+      at Connection.connect (node_modules\mysql\lib\Connection.js:130:18)
+      at Context.<anonymous> (tests\models\Chat.test.js:23:19)
+
+  3) ChatModel
+       should select the first row of data from database:
+     Error: ER_BAD_DB_ERROR: Base 'miny' inconnue
+      at Handshake.Sequence._packetToError (node_modules\mysql\lib\protocol\sequences\Sequence.js:52:14)
+      at Handshake.ErrorPacket (node_modules\mysql\lib\protocol\sequences\Handshake.js:130:18)
+      at Protocol._parsePacket (node_modules\mysql\lib\protocol\Protocol.js:279:23)
+      at Parser.write (node_modules\mysql\lib\protocol\Parser.js:76:12)
+      at Protocol.write (node_modules\mysql\lib\protocol\Protocol.js:39:16)
+      at Socket.<anonymous> (node_modules\mysql\lib\Connection.js:103:28)
+      at addChunk (_stream_readable.js:263:12)
+      at readableAddChunk (_stream_readable.js:250:11)
+      at Socket.Readable.push (_stream_readable.js:208:10)
+      at TCP.onread (net.js:594:20)
+      --------------------
+      at Protocol._enqueue (node_modules\mysql\lib\protocol\Protocol.js:145:48)
+      at Protocol.handshake (node_modules\mysql\lib\protocol\Protocol.js:52:23)
+      at Connection.connect (node_modules\mysql\lib\Connection.js:130:18)
+      at Context.<anonymous> (tests\models\Chat.test.js:45:19)
+
+
+

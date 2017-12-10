@@ -1,0 +1,36 @@
+
+> miny@1.0.0 test S:\cours\Miny
+> mocha --recursive tests
+
+
+
+  Base controller
+    √ should have a method which returns a child instance
+    √ should be capable to create differents childs
+
+  HomeController
+    √ should have the name of home
+    √ should have a run method
+
+  RoomController
+    √ should have the name of room
+    √ should have a run method
+    √ should have a model property
+    √ should be able to take the first id from database (56ms)
+
+  BaseModel
+    √ should be able to create a model
+    √ should have a method which returns a child instance
+
+  ChatModel
+    √ should be able to create an instance of the ChatModel 
+    √ should access to the database
+    √ should select the first row of data from database
+
+  BaseView
+    √ should be able to create a view
+    √ should have a method which returns a child instance
+
+
+  15 passing (70ms)
+
