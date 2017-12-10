@@ -9,7 +9,7 @@ Miny is a minimalist web chat using WebSocket.
 `Miny` is available on github :
 
 ```sh
-$ git clone https://github.com/sevseux/MinyJS.git
+$ git clone https://github.com/sevseux/Miny.git
 ```
 
 To install it, type:
